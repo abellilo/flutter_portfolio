@@ -9,7 +9,7 @@ class HomePageHeader extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.grey[100]
+        color: Colors.white
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

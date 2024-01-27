@@ -30,7 +30,8 @@ List portfolio_data = [
 ];
 
 List video_display = [
-  "lib/assets/vendor_market_with_welcome.png",
-  "lib/assets/vendor_market.png",
-  "lib/assets/vendor_admin.png",
+  "lib/videos/vendorhive360.mp4",
+  "lib/videos/mini_shop.mp4",
+  "lib/videos/socials_app.mp4",
+  "lib/videos/chat_app.mp4",
 ];

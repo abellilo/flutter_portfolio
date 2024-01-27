@@ -20,7 +20,7 @@ class _ViewPortfolioState extends State<ViewPortfolio> {
     // TODO: implement initState
     super.initState();
     _videoPlayerController =
-        VideoPlayerController.asset('lib/videos/vendorhive360.mp4')
+        VideoPlayerController.asset(video_display[widget.mainIndex])
           ..initialize().then((_) {
             _videoPlayerController.play();
             _videoPlayerController.setLooping(true);
@@ -32,7 +32,7 @@ class _ViewPortfolioState extends State<ViewPortfolio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.blueGrey[100],
       body: Column(children: [
         Container(
             height: 50,
