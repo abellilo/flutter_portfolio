@@ -20,13 +20,19 @@ class _ViewPortfolioState extends State<ViewPortfolio> {
     // TODO: implement initState
     super.initState();
     _videoPlayerController =
-        VideoPlayerController.asset(video_display[widget.mainIndex])
+        VideoPlayerController.networkUrl(Uri.parse(video_display[widget.mainIndex]))
           ..initialize().then((_) {
             _videoPlayerController.play();
             _videoPlayerController.setLooping(true);
             // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
             setState(() {});
           });
+  }
+
+  @override
+  void dispose(){
+    super.dispose();
+    _videoPlayerController.dispose();
   }
 
   @override

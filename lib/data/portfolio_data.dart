@@ -30,8 +30,8 @@ List portfolio_data = [
 ];
 
 List video_display = [
-  "lib/videos/vendorhive360.mp4",
-  "lib/videos/mini_shop.mp4",
-  "lib/videos/socials_app.mp4",
-  "lib/videos/chat_app.mp4",
+  "https://abelayinde.com.ng/portfolio/vendorhive360.mp4",
+  "https://abelayinde.com.ng/portfolio/mini_shop.mp4",
+  "https://abelayinde.com.ng/portfolio/socials_app.mp4",
+  "https://abelayinde.com.ng/portfolio/chat_app.mp4",
 ];

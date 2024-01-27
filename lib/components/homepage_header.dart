@@ -8,9 +8,7 @@ class HomePageHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      decoration: BoxDecoration(
-        color: Colors.white
-      ),
+      decoration: BoxDecoration(color: Colors.white),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -23,7 +21,11 @@ class HomePageHeader extends StatelessWidget {
           MouseRegion(
             cursor: SystemMouseCursors.click,
             child: GestureDetector(
-              onTap: (){},
+              onTap: () {
+                print(MediaQuery.of(context).size.width);
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text("Unavailable at the moment")));
+              },
               child: HeaderText(
                   text: "Contact",
                   fontsize: 14,
