@@ -29,7 +29,7 @@ List portfolio_data = [
   ],
 ];
 
-List imageSlide = [
+List video_display = [
   "lib/assets/vendor_market_with_welcome.png",
   "lib/assets/vendor_market.png",
   "lib/assets/vendor_admin.png",

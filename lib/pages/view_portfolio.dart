@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:web_portfolio/components/header_text.dart';
 import 'package:video_player/video_player.dart';
-
 import '../data/portfolio_data.dart';
 
 class ViewPortfolio extends StatefulWidget {

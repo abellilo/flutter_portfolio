@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:web_portfolio/components/my_text.dart';
 
 import 'header_text.dart';
+import 'my_color.dart';
 
 class PortfolioItem extends StatelessWidget {
   final List portfolioItem;
@@ -13,6 +13,9 @@ class PortfolioItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        color: MyColors.background_color,
+      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
