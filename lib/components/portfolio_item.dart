@@ -111,7 +111,7 @@ class PortfolioItem extends StatelessWidget {
                     fontsize: 30,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
-                    textAlign: TextAlign.left),
+                    textAlign: TextAlign.center),
                 const SizedBox(
                   height: 20,
                 ),
