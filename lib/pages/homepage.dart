@@ -38,8 +38,12 @@ class _HomePageState extends State<HomePage> {
                   SliverList(delegate: SliverChildBuilderDelegate(
                     childCount: 1,
                       (context, index){
-                        return SizedBox(
+                        return MediaQuery.of(context).size.width > 627 ?
+                        SizedBox(
                           height: 120,
+                        )
+                        :SizedBox(
+                          height: 40,
                         );
                       }
                   )),
@@ -60,8 +64,12 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(
+                              MediaQuery.of(context).size.width > 627 ?
+                              SizedBox(
                                 height: 150,
+                              )
+                                  :SizedBox(
+                                height: 40,
                               ),
                             ],
                           );
