@@ -116,6 +116,15 @@ class _HomePageState extends State<HomePage> {
                                     icon: FaIcon(FontAwesomeIcons.facebook))
                               ],
                             ),
+                            Center(
+                              child: HeaderText(
+                                text: "version 1.0",
+                                textAlign: TextAlign.center,
+                                fontsize: 10,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey.shade800,
+                              ),
+                            ),
                             const SizedBox(
                               height: 10,
                             )

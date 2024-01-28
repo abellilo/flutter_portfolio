@@ -37,39 +37,45 @@ class _ViewPortfolioState extends State<ViewPortfolio> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueGrey[100],
-      body: Column(children: [
-        Container(
-            height: 50,
-            width: MediaQuery.of(context).size.width,
-            alignment: Alignment.centerLeft,
-            padding: EdgeInsets.only(left: 20),
-            decoration: BoxDecoration(color: Colors.white),
-            child: HeaderText(
-                text: portfolio_data[widget.mainIndex][0],
-                fontsize: 17,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                textAlign: TextAlign.left)),
-        Container(
-          height: MediaQuery.of(context).size.height - 50,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15.0),
-            child: _videoPlayerController.value.isInitialized
-                ? VideoPlayer(_videoPlayerController)
-                : Container(
-              padding: EdgeInsets.all(MediaQuery.of(context).size.width/100),
-              child: Center(
-                child: CircularProgressIndicator(
+    return WillPopScope(
+      onWillPop: () async{
+        Navigator.pop(context);
+        return false;
+      },
+      child: Scaffold(
+        backgroundColor: Colors.blueGrey[100],
+        body: Column(children: [
+          Container(
+              height: 50,
+              width: MediaQuery.of(context).size.width,
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.only(left: 20),
+              decoration: BoxDecoration(color: Colors.white),
+              child: HeaderText(
+                  text: portfolio_data[widget.mainIndex][0],
+                  fontsize: 17,
+                  fontWeight: FontWeight.bold,
                   color: Colors.black,
-                  backgroundColor: Colors.yellow,
+                  textAlign: TextAlign.left)),
+          Container(
+            height: MediaQuery.of(context).size.height - 50,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15.0),
+              child: _videoPlayerController.value.isInitialized
+                  ? VideoPlayer(_videoPlayerController)
+                  : Container(
+                padding: EdgeInsets.all(MediaQuery.of(context).size.width/100),
+                child: Center(
+                  child: CircularProgressIndicator(
+                    color: Colors.black,
+                    backgroundColor: Colors.yellow,
+                  ),
                 ),
               ),
             ),
-          ),
-        )
-      ]),
+          )
+        ]),
+      ),
     );
   }
 }
