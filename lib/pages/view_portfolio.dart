@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:web_portfolio/components/header_text.dart';
 import 'package:video_player/video_player.dart';
+import 'package:web_portfolio/pages/homepage.dart';
 import '../data/portfolio_data.dart';
 
 class ViewPortfolio extends StatefulWidget {
@@ -39,7 +41,9 @@ class _ViewPortfolioState extends State<ViewPortfolio> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async{
-        Navigator.pop(context);
+        Navigator.push(context, MaterialPageRoute(builder: (context){
+          return HomePage();
+        }));
         return false;
       },
       child: Scaffold(
@@ -49,14 +53,31 @@ class _ViewPortfolioState extends State<ViewPortfolio> {
               height: 50,
               width: MediaQuery.of(context).size.width,
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(left: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(color: Colors.white),
-              child: HeaderText(
-                  text: portfolio_data[widget.mainIndex][0],
-                  fontsize: 17,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  textAlign: TextAlign.left)),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: HeaderText(
+                        text: portfolio_data[widget.mainIndex][0],
+                        fontsize: 17,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        textAlign: TextAlign.left),
+                  ),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.pop(context);
+                      },
+                      child: FaIcon(
+                        FontAwesomeIcons.house
+                      ),
+                    ),
+                  )
+                ],
+              )),
           Container(
             height: MediaQuery.of(context).size.height - 50,
             child: Padding(
