@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             Center(
                               child: HeaderText(
-                                text: "version 1.0",
+                                text: "version 1.1",
                                 textAlign: TextAlign.center,
                                 fontsize: 10,
                                 fontWeight: FontWeight.bold,

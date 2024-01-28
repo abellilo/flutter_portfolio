@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:web_portfolio/components/header_text.dart';
 import 'package:video_player/video_player.dart';
 import 'package:web_portfolio/pages/homepage.dart';
+import '../components/portfolio_header_text.dart';
 import '../data/portfolio_data.dart';
 
 class ViewPortfolio extends StatefulWidget {
@@ -58,12 +58,15 @@ class _ViewPortfolioState extends State<ViewPortfolio> {
               child: Row(
                 children: [
                   Expanded(
-                    child: HeaderText(
+                    child: PortfolioHeaderText(
                         text: portfolio_data[widget.mainIndex][0],
                         fontsize: 17,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                         textAlign: TextAlign.left),
+                  ),
+                  const SizedBox(
+                    width: 10,
                   ),
                   MouseRegion(
                     cursor: SystemMouseCursors.click,
