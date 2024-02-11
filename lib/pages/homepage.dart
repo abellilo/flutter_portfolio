@@ -22,6 +22,19 @@ class _HomePageState extends State<HomePage> {
   final Uri _url_twitter = Uri.parse('https://twitter.com/_abellilo');
   //facebook link
   final Uri _url_facebook = Uri.parse('https://web.facebook.com/abel.lilo');
+  //github link
+  final Uri _url_github = Uri.parse('https://github.com/abellilo');
+
+  ScrollController _controller = ScrollController();
+
+  // Scroll down
+  void _scrollDown() {
+    _controller.animateTo(
+      _controller.position.maxScrollExtent,
+      duration: Duration(seconds: 2),
+      curve: Curves.fastOutSlowIn,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +47,7 @@ class _HomePageState extends State<HomePage> {
               HomePageHeader(),
 
               Flexible(child: CustomScrollView(
+                controller: _controller,
                 slivers: [
                   SliverList(delegate: SliverChildBuilderDelegate(
                     childCount: 1,
@@ -83,12 +97,15 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Center(
                               child: HeaderText(
-                                text: "CREATED BY ABELLILO",
+                                text: "CONTACTS",
                                 textAlign: TextAlign.center,
                                 fontsize: 17,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.grey.shade800,
                               ),
+                            ),
+                            const SizedBox(
+                              height: 5,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -113,7 +130,14 @@ class _HomePageState extends State<HomePage> {
                                         throw Exception('Could not launch $_url_facebook');
                                       }
                                     },
-                                    icon: FaIcon(FontAwesomeIcons.facebook))
+                                    icon: FaIcon(FontAwesomeIcons.facebook)),
+                                IconButton(
+                                    onPressed: () async{
+                                      if (!await launchUrl(_url_github)) {
+                                        throw Exception('Could not launch $_url_github');
+                                      }
+                                    },
+                                    icon: FaIcon(FontAwesomeIcons.github)),
                               ],
                             ),
                             Center(
